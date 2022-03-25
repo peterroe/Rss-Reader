@@ -18,7 +18,6 @@
     "vue-router": "4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.18.9",
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
