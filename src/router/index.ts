@@ -1,12 +1,19 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "@/views/Home/index.vue";
+import Layout from "@/layout/index.vue";
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
       path: "/",
-      component: Home,
+      component: Layout,
+      redirect: "/rssReader",
+      children: [
+        {
+          path: "/rssReader",
+          component: () => import("@/views/RssReader.vue"),
+        },
+      ],
     },
   ],
 });
