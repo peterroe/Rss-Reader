@@ -14,16 +14,23 @@
     "core-js": "^3.8.3",
     "rss-parser": "^3.12.0",
     "ungeui": "^0.1.6",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-router": "4"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.18.9",
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-typescript": "^5.0.4",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "husky": "4.3.8",
+    "prettier": "^2.6.1",
+    "pretty-quick": "^3.1.3",
+    "typescript": "^4.6.3",
     "vue-cli-plugin-tauri": "~1.0.0-rc.1"
   },
   "eslintConfig": {
@@ -39,6 +46,11 @@
       "parser": "@babel/eslint-parser"
     },
     "rules": {}
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "browserslist": [
     "> 1%",
