@@ -1,4 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import UngeUI from 'ungeui'
 
-createApp(App).mount('#app')
+import 'ungeui/dist/style.css'
+
+createApp(App).use(UngeUI).mount('#app')
