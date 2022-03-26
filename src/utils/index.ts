@@ -4,7 +4,7 @@ export type itemType = {
   link?: string;
   guid?: string;
   pubDate?: string;
-  anthor?: string;
+  author?: string;
   item?: Array<any>;
 };
 

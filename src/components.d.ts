@@ -8,6 +8,8 @@ declare module "vue" {
     CarbonBasketball: typeof import("~icons/carbon/basketball")["default"];
     CarbonBat: typeof import("~icons/carbon/bat")["default"];
     CarbonBook: typeof import("~icons/carbon/book")["default"];
+    CarbonUserAvatar: typeof import("~icons/carbon/user-avatar")["default"];
+    CarbonUserAvatarFilled: typeof import("~icons/carbon/user-avatar-filled")["default"];
     FeildSet: typeof import("./components/FeildSet.vue")["default"];
     FeildSetItem: typeof import("./components/FeildSetItem.vue")["default"];
     LeftMenu: typeof import("./components/LeftMenu.vue")["default"];

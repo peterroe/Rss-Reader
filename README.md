@@ -1,24 +1,7 @@
-# tauri-app
+## Rss-Reader
 
-## Project setup
-```
-npm install
-```
+A DeskTop app base on tauri-app.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Preview
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![img](https://img-blog.csdnimg.cn/e48f32aeae084668b6ed9a459ccae861.png)

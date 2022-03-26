@@ -12,6 +12,7 @@
     sticky="~"
     top="0"
     border="~ solid #000"
+    bg="white"
   >
     <div>Rss Reader</div>
     <button
