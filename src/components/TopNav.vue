@@ -1,5 +1,30 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div bg="green-200" h="40px" w="full" sticky="~" top="0">top</div>
+  <div
+    h="48px"
+    leading="48px"
+    flex="~"
+    items="center"
+    justify="between"
+    w="full"
+    p="2"
+    sticky="~"
+    top="0"
+    border="~ solid #000"
+  >
+    <div>Rss Reader</div>
+    <button
+      border="~ solid [#50c0ad]"
+      rounded="md"
+      h="35px"
+      px="2"
+      text="[#fff]"
+      leading="35px"
+      bg="[#50c0ad]"
+      hover:bg="[#368275]"
+    >
+      Subscribe
+    </button>
+  </div>
 </template>
