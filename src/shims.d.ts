@@ -1,5 +1,3 @@
-declare module "ungeui";
-
 declare module "*.vue" {
   import { defineComponent } from "vue";
   const component: ReturnType<typeof defineComponent>;

@@ -1946,21 +1946,6 @@
   resolved "https://registry.yarnpkg.com/@vue/web-component-wrapper/-/web-component-wrapper-1.3.0.tgz#b6b40a7625429d2bd7c2281ddba601ed05dc7f1a"
   integrity sha512-Iu8Tbg3f+emIIMmI2ycSI8QcEuAUgPTgHwesDU1eKMLE4YC/c/sFbGc70QgMq31ijRftV0R7vCm9co6rldCeOA==
 
-"@vueuse/core@^6.9.1":
-  version "6.9.2"
-  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-6.9.2.tgz#76b16d01f33cf367dd1a2d7f2e31d106443ceb8a"
-  integrity sha512-FRwl4ccSFuHZBHLGgS9TMv/+Dd6XFaL4o9nph2qtgQIV+z29RBFokw08XjHfykiENRzB01MjYHJ7iRUnsIFQXg==
-  dependencies:
-    "@vueuse/shared" "6.9.2"
-    vue-demi "*"
-
-"@vueuse/shared@6.9.2":
-  version "6.9.2"
-  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-6.9.2.tgz#97e4369fa7262ebc96fe1d6e210268f30b037005"
-  integrity sha512-lAiMh6XROs0kSKVd0Yb/6GKoQMxC1fYrFDi6opvQWISPtcqRNluRrQxLUZ3WTI78ovtoKRLktjhkFAtydcfFDg==
-  dependencies:
-    vue-demi "*"
-
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.11.1.tgz#2bfd767eae1a6996f432ff7e8d7fc75679c0b6a7"
@@ -6764,13 +6749,6 @@ unconfig@^0.3.2:
     "@antfu/utils" "^0.5.0"
     defu "^5.0.1"
     jiti "^1.13.0"
-
-ungeui@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/ungeui/-/ungeui-0.1.6.tgz#047a486f3c431530ff35df3e2bad36d2f188beec"
-  integrity sha512-IWAAbE+wVGyeIpHCvJXwgbZV8TGvu3wOYx3agXUSApEpZ3ZMjCpmD1VuEfMvxdVkI9zPegLyq78rUw6c2+H/Qw==
-  dependencies:
-    "@vueuse/core" "^6.9.1"
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.0"
