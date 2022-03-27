@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<rssType>(), {});
     rounded="md"
     hover:bg="[#233e61]"
     hover:cursor="pointer"
+    :class="{ 'bg-[#233e61]': store.path === props.path }"
     @click="store.setPath(props.path)"
   >
     <div mr="2">

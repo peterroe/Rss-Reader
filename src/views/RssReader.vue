@@ -24,7 +24,15 @@ watchEffect(async () => {
 
 <template>
   <div px="1">
-    <div w="4/5" bg="blue-300" my="5" mx="auto">
+    <div
+      class="itemShadow"
+      w="4/5"
+      bg="green-400/20"
+      rounded="md"
+      p="2"
+      my="5"
+      mx="auto"
+    >
       {{ mainIdea.description }}
     </div>
     <div flex="~ wrap" justify="between">
@@ -38,10 +46,10 @@ watchEffect(async () => {
         h="300px"
         my="5"
         bg="white"
-        border="~ solid #ddd"
         cursor="pointer"
         rounded="md"
         overflow="hidden"
+        class="itemShadow"
       >
         <div h="190px">
           <img
@@ -87,5 +95,10 @@ img {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.itemShadow {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 20px 10px -15px rgb(197 192 249 / 20%);
 }
 </style>
