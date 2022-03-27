@@ -22,11 +22,10 @@ const props = withDefaults(defineProps<rssType>(), {});
     rounded="md"
     hover:bg="[#233e61]"
     hover:cursor="pointer"
-    @click="store.setPath(props.text)"
+    @click="store.setPath(props.path)"
   >
     <div mr="2">
-      <div class="i-carbon-book"></div>
-      <slot></slot>
+      <div :class="props.icon"></div>
     </div>
     <div flex="1">
       {{ props.text }}

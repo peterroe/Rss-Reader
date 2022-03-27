@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRssSource } from "@/store/rssSource";
+
+const store = useRssSource();
+</script>
 
 <template>
   <div
@@ -11,10 +15,10 @@
     p="2"
     sticky="~"
     top="30px"
-    border="~ solid #000"
     bg="white"
+    class="botton-border"
   >
-    <div>Rss Reader</div>
+    <div>{{ store.title }}</div>
     <button
       border="~ solid [#50c0ad]"
       rounded="md"
@@ -29,3 +33,9 @@
     </button>
   </div>
 </template>
+
+<style scoped>
+.botton-border {
+  border-bottom: 1px solid #ccc;
+}
+</style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue-demi";
+import { ref } from "vue";
 type rssType = {
   text?: string;
   path?: string;
@@ -11,27 +11,32 @@ const data = ref<Array<rssType>>([
   {
     text: "少数派",
     path: "https://sspai.com/feed",
-    icon: "https://cdn.sspai.com/web/favicon/sspai.ico",
+    icon: "i-carbon-rss",
   },
   {
     text: "36氪",
     path: "https://36kr.com/feed",
-    icon: "https://cdn.sspai.com/web/favicon/36kr.ico",
+    icon: "i-carbon-star",
   },
   {
     text: "设计日报",
-    path: "https://www.designernews.co/feed",
-    icon: "https://cdn.sspai.com/web/favicon/designernews.ico",
-  },
-  {
-    text: "设计公众号",
-    path: "https://www.designernews.co/feed",
-    icon: "https://cdn.sspai.com/web/favicon/designernews.ico",
+    path: "https://www.designernews.co/?format=rss",
+    icon: "i-carbon-bat",
   },
   {
     text: "antfu",
     path: "https://antfu.me/feed.xml",
-    icon: "https://cdn.sspai.com/web/favicon/antfu.ico",
+    icon: "i-carbon-3rd-party-connected",
+  },
+  {
+    text: "机核",
+    path: "https://www.gcores.com/rss",
+    icon: "i-carbon-money",
+  },
+  {
+    text: "Shadeed Blog",
+    path: "https://ishadeed.com/feed.xml",
+    icon: "i-carbon-earth",
   },
 ]);
 

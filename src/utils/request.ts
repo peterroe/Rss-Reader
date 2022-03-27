@@ -10,8 +10,8 @@ export default function getRssMessage(url: string): Promise<any> {
       .then((res) => {
         return XmlToJs(res.data as string);
       })
-      .then((target) => {
-        resolve(target);
+      .then((target: { rss: Array<any> }) => {
+        resolve(target.rss[0].channel);
       })
       .catch((err) => {
         reject(err);

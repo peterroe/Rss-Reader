@@ -15,6 +15,6 @@
   padding: 0;
 }
 ::-webkit-scrollbar {
-  display: none; /* Chrome Safari */
+  display: none;
 }
 </style>

@@ -1,74 +1,70 @@
 <script setup lang="ts">
+import { ref, watchEffect } from "vue";
 import dayjs from "dayjs";
 import getRssMessage from "@/utils/request";
 import { getItems, getMainIdea, itemType, mainIdeaType } from "@/utils/index";
-import { ref } from "vue";
+import { useRssSource } from "@/store/rssSource";
 
 const items = ref<Array<itemType>>([]);
 const mainIdea = ref<mainIdeaType>({});
-//http://www.ruanyifeng.com/blog/atom.xml *
-//https://sspai.com/feed
-//https://antfu.me/feed.xml
-//https://36kr.com/feed
-getRssMessage("https://36kr.com/feed").then((value) => {
-  console.log(
-    "%c [ value ]-10",
-    "font-size:13px; background:pink; color:#bf2c9f;",
-    value
-  );
 
-  const wrapper = value.rss[0].channel;
+const store = useRssSource();
+// setInterval(() => {
+//   console.log('test', store)
+// },1000)
+watchEffect(async () => {
+  const value = await getRssMessage(store.path);
 
-  mainIdea.value = getMainIdea(wrapper);
-  items.value = getItems(wrapper);
-  console.log(mainIdea.value, items.value);
+  mainIdea.value = getMainIdea(value);
+  items.value = getItems(value);
+
+  store.setTitle(mainIdea.value.title);
 });
 </script>
 
 <template>
-  <div>
-    {{ mainIdea.title }}
-  </div>
-  <div>
-    {{ mainIdea.description }}
-  </div>
-  <div flex="~ wrap" justify="between">
-    <div
-      v-for="it in items"
-      :key="it.title"
-      w="full"
-      md:w="48/100"
-      xl:w="31/100"
-      mx="1/100"
-      h="300px"
-      my="5"
-      bg="white"
-      border="~ solid #ddd"
-      cursor="pointer"
-      rounded="md"
-      overflow="hidden"
-    >
-      <div h="190px">
-        <img
-          w="full"
-          h="full"
-          src="https://cdn.sspai.com/article/34c8b415-48cd-387f-1c4c-a6212318ff16.jpg"
-          alt=""
-        />
-      </div>
-      <div p="3">
-        <div class="ellipsis" h="50px" mb="4" font="bold" text="left">
-          {{ it.title }}
+  <div px="1">
+    <div w="4/5" bg="blue-300" my="5" mx="auto">
+      {{ mainIdea.description }}
+    </div>
+    <div flex="~ wrap" justify="between">
+      <div
+        v-for="it in items"
+        :key="it.title"
+        w="full"
+        md:w="48/100"
+        xl:w="31/100"
+        mx="1/100"
+        h="300px"
+        my="5"
+        bg="white"
+        border="~ solid #ddd"
+        cursor="pointer"
+        rounded="md"
+        overflow="hidden"
+      >
+        <div h="190px">
+          <img
+            w="full"
+            h="full"
+            src="https://cdn.sspai.com/article/34c8b415-48cd-387f-1c4c-a6212318ff16.jpg"
+            alt=""
+          />
         </div>
-        <div flex="~" justify="between">
-          <div w="3/5" text="sm" flex="~ 1" items="center">
-            <CarbonUserAvatarFilled mr="2" />
-            <div class="ellipsis-single">
-              {{ it.author }}
-            </div>
+        <div p="3">
+          <div class="ellipsis" h="50px" mb="4" font="bold" text="left">
+            {{ it.title }}
           </div>
-          <div class="ellipsis-single" text="sm" w="100px">
-            {{ dayjs(it.pubDate).format("YYYY-MM-DD") }}
+          <div flex="~" justify="between">
+            <div w="3/5" text="sm" flex="~ 1" items="center">
+              <CarbonUserAvatarFilled mr="2" />
+              <div class="ellipsis-single">
+                {{ it.author }}
+              </div>
+            </div>
+            <div class="ellipsis-single" text="sm" w="100px">
+              {{ dayjs(it.pubDate).format("YYYY-MM-DD") }}
+            </div>
           </div>
         </div>
       </div>
