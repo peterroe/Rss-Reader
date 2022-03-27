@@ -1,5 +1,6 @@
 const { defineConfig } = require("@vue/cli-service");
 const IconsResolver = require("unplugin-icons/resolver");
+const { presetAttributify, presetUno, presetIcons } = require("unocss");
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -32,8 +33,26 @@ module.exports = defineConfig({
             enabledCollections: ["carbon"],
           }),
         ],
-
         dts: "src/components.d.ts",
+      }),
+      require("@unocss/webpack").default({
+        theme: {
+          fontFamily: {
+            sans: '"Inter", Inter var,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+          },
+        },
+        presets: [
+          presetIcons({
+            extraProperties: {
+              display: "inline-block",
+              height: "1.2em",
+              width: "1.2em",
+              "vertical-align": "text-bottom",
+            },
+          }),
+          presetAttributify(),
+          presetUno(),
+        ],
       }),
     ],
   },

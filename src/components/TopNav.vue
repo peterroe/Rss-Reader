@@ -10,7 +10,7 @@
     w="full"
     p="2"
     sticky="~"
-    top="0"
+    top="30px"
     border="~ solid #000"
     bg="white"
   >

@@ -6,13 +6,17 @@ import { ref } from "vue";
 
 const items = ref<Array<itemType>>([]);
 const mainIdea = ref<mainIdeaType>({});
-
-getRssMessage("https://sspai.com/feed").then((value) => {
+//http://www.ruanyifeng.com/blog/atom.xml *
+//https://sspai.com/feed
+//https://antfu.me/feed.xml
+//https://36kr.com/feed
+getRssMessage("https://36kr.com/feed").then((value) => {
   console.log(
     "%c [ value ]-10",
     "font-size:13px; background:pink; color:#bf2c9f;",
     value
   );
+
   const wrapper = value.rss[0].channel;
 
   mainIdea.value = getMainIdea(wrapper);
@@ -57,11 +61,15 @@ getRssMessage("https://sspai.com/feed").then((value) => {
           {{ it.title }}
         </div>
         <div flex="~" justify="between">
-          <div text="sm" flex="~" items="center">
+          <div w="3/5" text="sm" flex="~ 1" items="center">
             <CarbonUserAvatarFilled mr="2" />
-            {{ it.author }}
+            <div class="ellipsis-single">
+              {{ it.author }}
+            </div>
           </div>
-          <div text="sm">{{ dayjs(it.pubDate).format("YYYY-MM-DD") }}</div>
+          <div class="ellipsis-single" text="sm" w="100px">
+            {{ dayjs(it.pubDate).format("YYYY-MM-DD") }}
+          </div>
         </div>
       </div>
     </div>
@@ -78,5 +86,10 @@ img {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+.ellipsis-single {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 </style>

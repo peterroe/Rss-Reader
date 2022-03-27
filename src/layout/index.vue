@@ -2,20 +2,15 @@
 
 <template>
   <div flex="~">
-    <div
-      overflow="auto"
-      w="250px"
-      h="100vh"
-      bg="[#294973]"
-      sticky="~"
-      top="0"
-      z="10"
-    >
+    <CustomWindow />
+    <div w="250px" h="100vh" bg="[#294973]" sticky="~" top="0" pt="30px" z="10">
       <LeftMenu />
     </div>
-    <div flex="1">
+    <div flex="1" bg="white" class="bug-fix" mt="30px">
       <TopNav />
       <router-view></router-view>
     </div>
   </div>
 </template>
+
+<style></style>

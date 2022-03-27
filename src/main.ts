@@ -8,4 +8,10 @@ import "ungeui/dist/style.css";
 //windicss
 import "windi.css";
 
-createApp(App).use(router).use(UngeUI).mount("#app");
+//unocss
+import "uno.css";
+
+//pinia
+import { createPinia } from "pinia";
+
+createApp(App).use(router).use(createPinia()).use(UngeUI).mount("#app");
