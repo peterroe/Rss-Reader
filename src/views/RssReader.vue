@@ -23,18 +23,33 @@ watchEffect(async () => {
 </script>
 
 <template>
-  <div px="1">
+  <div>
     <div
-      class="itemShadow"
-      w="4/5"
-      bg="green-400/20"
+      class="itemShadow descriptionBox"
+      bg="teal-400/30"
+      style="
+        background-image: linear-gradient(
+          to right,
+          #f78ca0 0%,
+          #f9748f 19%,
+          #fd868c 60%,
+          #fe9a8b 100%
+        );
+      "
       rounded="md"
-      p="2"
+      p="4"
       my="5"
-      mx="auto"
+      mx="1/100"
+      v-if="mainIdea.description"
     >
-      {{ mainIdea.description }}
+      <div font="bold" text="xl left">
+        <div class="i-carbon-pin-filled"></div>
+      </div>
+      <p leading="8" text="left gray-100" indent="lg">
+        {{ mainIdea.description }}
+      </p>
     </div>
+    <div>---</div>
     <div flex="~ wrap" justify="between">
       <div
         v-for="it in items"
@@ -100,5 +115,14 @@ img {
 .itemShadow {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 20px 10px -15px rgb(197 192 249 / 20%);
+}
+
+.descriptionBox {
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.descriptionBox:hover {
+  border-radius: 0.5rem;
 }
 </style>

@@ -13,6 +13,7 @@ const store = useRssSource();
     justify="between"
     w="full"
     p="2"
+    z="9"
     sticky="~"
     top="30px"
     bg="white"

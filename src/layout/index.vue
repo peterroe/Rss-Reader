@@ -9,6 +9,7 @@
     <div flex="1" bg="white" class="bug-fix" mt="30px">
       <TopNav />
       <router-view></router-view>
+      <Footer />
     </div>
   </div>
 </template>

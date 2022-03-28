@@ -9,6 +9,7 @@ declare module "vue" {
     CustomWindow: typeof import("./components/CustomWindow.vue")["default"];
     FeildSet: typeof import("./components/FeildSet.vue")["default"];
     FeildSetItem: typeof import("./components/FeildSetItem.vue")["default"];
+    Footer: typeof import("./components/Footer.vue")["default"];
     LeftMenu: typeof import("./components/LeftMenu.vue")["default"];
     TopNav: typeof import("./components/TopNav.vue")["default"];
   }
