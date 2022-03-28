@@ -1,5 +1,4 @@
 const { defineConfig } = require("@vue/cli-service");
-const IconsResolver = require("unplugin-icons/resolver");
 const { presetAttributify, presetUno, presetIcons } = require("unocss");
 
 module.exports = defineConfig({
@@ -19,21 +18,6 @@ module.exports = defineConfig({
     plugins: [
       require("unplugin-icons/webpack")({
         autoInstall: true,
-      }),
-      require("unplugin-vue-components/webpack")({
-        // allow auto import and register components used in markdown
-        include: [/\.vue$/, /\.vue\?vue/],
-
-        // custom resolvers
-        resolvers: [
-          // auto import icons
-          // https://github.com/antfu/unplugin-icons
-          IconsResolver({
-            componentPrefix: "",
-            enabledCollections: ["carbon"],
-          }),
-        ],
-        dts: "src/components.d.ts",
       }),
       require("@unocss/webpack").default({
         theme: {

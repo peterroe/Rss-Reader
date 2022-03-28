@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CustomWindow from "@/components/CustomWindow.vue";
+import LeftMenu from "@/components/LeftMenu.vue";
+import TopNav from "@/components/TopNav.vue";
+import Footer from "@/components/Footer.vue";
+</script>
 
 <template>
   <div flex="~">

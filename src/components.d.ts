@@ -4,8 +4,6 @@
 
 declare module "vue" {
   export interface GlobalComponents {
-    CarbonAddAlt: typeof import("~icons/carbon/add-alt")["default"];
-    CarbonUserAvatarFilled: typeof import("~icons/carbon/user-avatar-filled")["default"];
     CustomWindow: typeof import("./components/CustomWindow.vue")["default"];
     FeildSet: typeof import("./components/FeildSet.vue")["default"];
     FeildSetItem: typeof import("./components/FeildSetItem.vue")["default"];

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import FeildSetItem from "./FeildSetItem.vue";
+import FeildSet from "./FeildSet.vue";
 import { ref } from "vue";
 type rssType = {
   text?: string;

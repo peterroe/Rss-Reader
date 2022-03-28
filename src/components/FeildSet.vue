@@ -11,7 +11,7 @@ const props = defineProps<{
         {{ props.title }}
       </div>
       <div hover:text="[#04bf8a]" hover:cursor="pointer">
-        <CarbonAddAlt />
+        <div class="i-carbon-add-alt"></div>
       </div>
     </div>
     <slot></slot>
