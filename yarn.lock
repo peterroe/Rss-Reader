@@ -2474,13 +2474,6 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-brace-expansion@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-2.0.1.tgz#1edc459e0f0c548486ecf9fc99f2221364b9a0ae"
-  integrity sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==
-  dependencies:
-    balanced-match "^1.0.0"
-
 braces@^3.0.2, braces@~3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/braces/-/braces-3.0.2.tgz#3454e1a462ee8d599e236df336cd9ea4f8afe107"
@@ -4928,13 +4921,6 @@ minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimatch@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.0.1.tgz#fb9022f7528125187c92bd9e9b6366be1cf3415b"
-  integrity sha512-nLDxIFRyhDblz3qMuq+SoRZED4+miJ/G+tdDrjkkkRnjAsBexeGpgjLEQ0blJy7rHhR2b93rhQY4SvyWu9v03g==
-  dependencies:
-    brace-expansion "^2.0.1"
-
 minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
@@ -6011,7 +5997,7 @@ resolve-from@^4.0.0:
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
   integrity sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==
 
-resolve@^1.10.0, resolve@^1.14.2, resolve@^1.22.0:
+resolve@^1.10.0, resolve@^1.14.2:
   version "1.22.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.0.tgz#5e0b8c67c15df57a89bdbabe603a002f21731198"
   integrity sha512-Hhtrw0nLeSrFQ7phPp4OOcVjLPIeMnRlr5mcnVuMe7M/7eBn98A3hmFRLoFo3DLZkivSYwhRUJTyPyWAk56WLw==
@@ -6814,30 +6800,6 @@ unplugin-icons@^0.14.1:
     kolorist "^1.5.1"
     local-pkg "^0.4.1"
     unplugin "^0.5.2"
-
-unplugin-vue-components@^0.18.4:
-  version "0.18.4"
-  resolved "https://registry.yarnpkg.com/unplugin-vue-components/-/unplugin-vue-components-0.18.4.tgz#f835e2aea03cafe7d62537d5cd7e1daf5e013fbb"
-  integrity sha512-nYPv7GgKKRZ/U12z6nLyjG5dsdUflTtnWvzOMLkT5p1UXT6wssN2epA/HbYV+KNLw8l+N1cGMEoaiMZrZxkh8Q==
-  dependencies:
-    "@antfu/utils" "^0.5.0"
-    "@rollup/pluginutils" "^4.2.0"
-    chokidar "^3.5.3"
-    debug "^4.3.3"
-    fast-glob "^3.2.11"
-    local-pkg "^0.4.1"
-    magic-string "^0.26.1"
-    minimatch "^5.0.1"
-    resolve "^1.22.0"
-    unplugin "^0.4.0"
-
-unplugin@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/unplugin/-/unplugin-0.4.0.tgz#43a923f0267f8834118a926c406131d1d84a1358"
-  integrity sha512-4ScITEmzlz1iZW3tkz+3L1V5k/xMQ6kjgm4lEXKxH0ozd8/OUWfiSA7RMRyrawsvq/t50JIzPpp1UyuSL/AXkA==
-  dependencies:
-    chokidar "^3.5.3"
-    webpack-virtual-modules "^0.4.3"
 
 unplugin@^0.5.2:
   version "0.5.2"
