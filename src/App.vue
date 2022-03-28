@@ -17,4 +17,8 @@
 *::-webkit-scrollbar {
   display: none;
 }
+@font-face {
+  font-family: "xknl";
+  src: url("./assets/font/xknl.ttf");
+}
 </style>

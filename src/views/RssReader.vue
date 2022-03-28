@@ -45,6 +45,8 @@ const openInNewTab = (url: string) => {
       bg="teal-400/30"
       style="
         background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
+
+        font-family: 'xknl';
       "
       rounded="md"
       p="4"
@@ -59,7 +61,11 @@ const openInNewTab = (url: string) => {
         {{ mainIdea.description }}
       </p>
     </div>
-    <div>---</div>
+    <div>
+      <div text="cyan-600" class="i-carbon-rocket"></div>
+      Get Started
+      <div text="cyan-600" class="i-carbon-cd-archive"></div>
+    </div>
     <div flex="~ wrap" justify="between">
       <div
         v-for="it in items"

@@ -8,4 +8,4 @@ A DeskTop rss-Reader app base on tauri-app.
 
 ## Preview
 
-![img](https://img-blog.csdnimg.cn/e9a1f3cdd2d74fa4a10951fe9517e9aa.png)
+![img](https://img-blog.csdnimg.cn/94c7b30593df40a396bba398416cc4d8.png)

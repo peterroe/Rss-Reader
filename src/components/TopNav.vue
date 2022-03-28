@@ -18,6 +18,7 @@ const store = useRssSource();
     top="30px"
     bg="white"
     class="botton-border"
+    style="font-family: 'xknl'"
   >
     <div>{{ store.title }}</div>
     <button

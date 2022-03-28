@@ -59,14 +59,14 @@
     },
     "windows": [
       {
-        "title": "Tauri App",
+        "title": "Rss Reader",
         "width": 800,
         "minWidth": 1000,
         "height": 600,
         "resizable": true,
         "fullscreen": false,
         "decorations": false,
-        "transparent": true
+        "transparent": false
       }
     ],
     "security": {
