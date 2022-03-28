@@ -3,6 +3,7 @@ import { ref, watchEffect } from "vue";
 import dayjs from "dayjs";
 import getRssMessage from "@/utils/request";
 import { getItems, getMainIdea, itemType, mainIdeaType } from "@/utils/index";
+import { WebviewWindow } from "@tauri-apps/api/window";
 import { useRssSource } from "@/store/rssSource";
 
 const items = ref<Array<itemType>>([]);
@@ -20,21 +21,30 @@ watchEffect(async () => {
 
   store.setTitle(mainIdea.value.title);
 });
+
+const openInNewTab = (url: string) => {
+  const webview = new WebviewWindow("label", {
+    url: url,
+    maximized: true,
+  });
+  webview.once("tauri://created", function () {
+    // webview window successfully created
+    console.log("tauri://created");
+  });
+  webview.once("tauri://error", function (e) {
+    // an error happened creating the webview window
+    console.log("tauri://error", e);
+  });
+};
 </script>
 
 <template>
-  <div>
+  <div p="2">
     <div
       class="itemShadow descriptionBox"
       bg="teal-400/30"
       style="
-        background-image: linear-gradient(
-          to right,
-          #f78ca0 0%,
-          #f9748f 19%,
-          #fd868c 60%,
-          #fe9a8b 100%
-        );
+        background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
       "
       rounded="md"
       p="4"
@@ -45,7 +55,7 @@ watchEffect(async () => {
       <div font="bold" text="xl left">
         <div class="i-carbon-pin-filled"></div>
       </div>
-      <p leading="8" text="left gray-100" indent="lg">
+      <p leading="8" text="left gray-50" indent="lg">
         {{ mainIdea.description }}
       </p>
     </div>
@@ -65,12 +75,13 @@ watchEffect(async () => {
         rounded="md"
         overflow="hidden"
         class="itemShadow"
+        @click="openInNewTab(it.link)"
       >
         <div h="190px">
           <img
             w="full"
             h="full"
-            src="https://cdn.sspai.com/article/34c8b415-48cd-387f-1c4c-a6212318ff16.jpg"
+            :src="'https://unsplash.it/1600/900?random=' + Math.random()"
             alt=""
           />
         </div>
@@ -114,7 +125,8 @@ img {
 
 .itemShadow {
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 20px 10px -15px rgb(197 192 249 / 20%);
+  box-shadow: 0 20px 10px -15px rgba(107, 114, 128, 0.5);
+  @apply shadow-cyan-400;
 }
 
 .descriptionBox {
