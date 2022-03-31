@@ -1,26 +1,34 @@
 <script setup lang="ts">
-import { ref, watchEffect } from "vue";
+import { ref, watch } from "vue";
 import dayjs from "dayjs";
 import getRssMessage from "@/utils/request";
 import { getItems, getMainIdea, itemType, mainIdeaType } from "@/utils/index";
 import { WebviewWindow } from "@tauri-apps/api/window";
 import { useRssSource } from "@/store/rssSource";
+import { useLoadingState } from "@/store/loadingState";
 
 const items = ref<Array<itemType>>([]);
 const mainIdea = ref<mainIdeaType>({});
 
 const store = useRssSource();
-// setInterval(() => {
-//   console.log('test', store)
-// },1000)
-watchEffect(async () => {
-  const value = await getRssMessage(store.path);
+const loadingState = useLoadingState();
 
-  mainIdea.value = getMainIdea(value);
-  items.value = getItems(value);
+watch(
+  () => store.path,
+  async () => {
+    loadingState.setLoading(true);
+    const value = await getRssMessage(store.path);
 
-  store.setTitle(mainIdea.value.title);
-});
+    mainIdea.value = getMainIdea(value);
+    items.value = getItems(value);
+
+    store.setTitle(mainIdea.value.title);
+    loadingState.setLoading(false);
+  },
+  {
+    immediate: true,
+  }
+);
 
 const openInNewTab = (url: string) => {
   const webview = new WebviewWindow("label", {
@@ -45,12 +53,14 @@ const openInNewTab = (url: string) => {
       bg="teal-400/30"
       style="
         background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
-
         font-family: 'xknl';
       "
       rounded="md"
-      p="4"
-      my="5"
+      px="5"
+      pt="4"
+      pb="6"
+      mt="12"
+      mb="8"
       mx="1/100"
       v-if="mainIdea.description"
     >
@@ -61,7 +71,15 @@ const openInNewTab = (url: string) => {
         {{ mainIdea.description }}
       </p>
     </div>
-    <div>
+    <div
+      border
+      rounded="md"
+      p="2"
+      flex="~"
+      items="center"
+      gap="1"
+      justify="center"
+    >
       <div text="cyan-600" class="i-carbon-rocket"></div>
       Get Started
       <div text="cyan-600" class="i-carbon-cd-archive"></div>
@@ -85,9 +103,9 @@ const openInNewTab = (url: string) => {
       >
         <div h="190px">
           <img
+            v-lazy="'https://unsplash.it/1600/900?random=' + Math.random()"
             w="full"
             h="full"
-            :src="'https://unsplash.it/1600/900?random=' + Math.random()"
             alt=""
           />
         </div>
@@ -97,7 +115,8 @@ const openInNewTab = (url: string) => {
           </div>
           <div flex="~" justify="between">
             <div w="3/5" text="sm" flex="~ 1" items="center">
-              <CarbonUserAvatarFilled mr="2" />
+              <!-- <CarbonUserAvatarFilled mr="2" /> -->
+              <div class="i-carbon-user-avatar-filled" mr="2"></div>
               <div class="ellipsis-single">
                 {{ it.author }}
               </div>
@@ -132,7 +151,6 @@ img {
 .itemShadow {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 20px 10px -15px rgba(107, 114, 128, 0.5);
-  @apply shadow-cyan-400;
 }
 
 .descriptionBox {

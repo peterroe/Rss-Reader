@@ -52,6 +52,8 @@ onMounted(() => {
   top: 0;
   left: 0;
   right: 0;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
 }
 .titlebar-button {
   display: inline-flex;

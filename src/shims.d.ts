@@ -7,3 +7,5 @@ declare module "*.vue" {
 declare module "unicorn";
 
 declare module "dayjs";
+
+declare module "uspin";

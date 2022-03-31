@@ -6826,6 +6826,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+uspin@^1.1.1:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/uspin/-/uspin-1.3.0.tgz#b7c964a45ce076ce0026a9304f2cdabb76db5790"
+  integrity sha512-hcesoGhAYhlNijpGdNsegk3bD7Zv3Z52QDZcHaA+kJVGiT0+Mf5fxk8mP7tBqQWvC8fkmqjwoigpXuiezzh8Rg==
+
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -6916,6 +6921,11 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
+
+vue-img-lazy-tiny@^1.1.3:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/vue-img-lazy-tiny/-/vue-img-lazy-tiny-1.1.4.tgz#fe578cba65a3e5aaf0e40e53b59460b46a806481"
+  integrity sha512-94GQKzdeblNAnznX8cPCabtvJ31YEggMzQzu6/v3/pBrC2q18hDn3z9ptiAiwYZ8bOxN9k0RAx32jn7bDECGfA==
 
 vue-loader@^17.0.0:
   version "17.0.0"

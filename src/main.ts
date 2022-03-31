@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router/index";
+import { createPinia } from "pinia";
+import vilt from "vue-img-lazy-tiny";
 
 //windicss
 import "windi.css";
@@ -8,7 +10,4 @@ import "windi.css";
 //unocss
 import "uno.css";
 
-//pinia
-import { createPinia } from "pinia";
-
-createApp(App).use(router).use(createPinia()).mount("#app");
+createApp(App).use(router).use(createPinia()).use(vilt).mount("#app");
