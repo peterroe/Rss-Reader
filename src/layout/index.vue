@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { nextTick, onMounted, ref, watch } from "vue";
 import { show, hide } from "uspin";
+import { useLoadingState } from "@/store/loadingState";
+import { storeToRefs } from "pinia";
+import { appWindow } from "@tauri-apps/api/window";
 import CustomWindow from "@/components/CustomWindow.vue";
 import LeftMenu from "@/components/LeftMenu.vue";
 import TopNav from "@/components/TopNav.vue";
 import Footer from "@/components/Footer.vue";
-import { useLoadingState } from "@/store/loadingState";
-import { storeToRefs } from "pinia";
 
 const { loading } = storeToRefs(useLoadingState());
 const wrapperRef = ref();
 
 watch(
   () => loading.value,
-  (n, o) => {
+  (n) => {
     if (n) {
       show(wrapperRef.value);
     } else {

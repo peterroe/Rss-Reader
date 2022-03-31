@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch, onMounted } from "vue";
 import dayjs from "dayjs";
 import getRssMessage from "@/utils/request";
 import { getItems, getMainIdea, itemType, mainIdeaType } from "@/utils/index";
@@ -47,7 +47,7 @@ const openInNewTab = (url: string) => {
 </script>
 
 <template>
-  <div p="2">
+  <div pt="49px" px="2">
     <div
       class="itemShadow descriptionBox"
       bg="teal-400/30"
@@ -59,9 +59,6 @@ const openInNewTab = (url: string) => {
       px="5"
       pt="4"
       pb="6"
-      mt="12"
-      mb="8"
-      mx="1/100"
       v-if="mainIdea.description"
     >
       <div font="bold" text="xl left">
@@ -160,5 +157,13 @@ img {
 
 .descriptionBox:hover {
   border-radius: 0.5rem;
+}
+</style>
+
+<style>
+.u-spin-core {
+  position: fixed !important;
+  z-index: 9999 !important;
+  border-radius: 0.2em;
 }
 </style>
