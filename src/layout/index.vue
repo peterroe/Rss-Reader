@@ -53,7 +53,9 @@ watch(
 <style scoped>
 .wrapper {
   box-sizing: border-box;
-  height: 100vh;
+  margin-right: 1px;
+  height: calc(100vh - 1px);
+  border: 1px solid #294973;
   overflow: auto;
   border-bottom-right-radius: 1em;
   border-top-right-radius: 1.5em;
@@ -61,5 +63,6 @@ watch(
 .leftContainer {
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
+  height: calc(100vh - 1px);
 }
 </style>

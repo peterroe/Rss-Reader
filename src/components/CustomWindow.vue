@@ -62,9 +62,6 @@ onMounted(() => {
   width: 25px;
   height: 30px;
   margin: auto -2px;
-}
-.titlebar-button:hover {
-  /* background: #5bbec3; */
-  @apply cursor-pointer;
+  cursor: pointer;
 }
 </style>

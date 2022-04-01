@@ -59,6 +59,7 @@ const openInNewTab = (url: string) => {
       px="5"
       pt="4"
       pb="6"
+      mb="6"
       v-if="mainIdea.description"
     >
       <div font="bold" text="xl left">
