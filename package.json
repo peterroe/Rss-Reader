@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "release": "cp -r ./src-tauri/target/release/bundle/msi/ ./release/",
-    "tauri:build": "vue-cli-service tauri:build && yarn release",
+    "tauri:build": "rimraf ./src-tauri/target/release/bundle/msi/* && vue-cli-service tauri:build",
     "tauri:dev": "vue-cli-service tauri:dev",
     "tauri:serve": "vue-cli-service tauri:serve"
   },
@@ -38,6 +38,7 @@
     "husky": "4.3.8",
     "prettier": "^2.6.1",
     "pretty-quick": "^3.1.3",
+    "rimraf": "^3.0.2",
     "typescript": "^4.6.3",
     "unocss": "^0.30.6",
     "unplugin-icons": "^0.14.1",
