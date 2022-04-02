@@ -96,7 +96,7 @@ const openInNewTab = (url: string) => {
         cursor="pointer"
         rounded="md"
         overflow="hidden"
-        class="itemShadow"
+        class="itemShadow 2xl:w-24/100"
         @click="openInNewTab(it.link)"
       >
         <div h="190px">
