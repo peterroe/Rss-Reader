@@ -116,7 +116,7 @@ const openInNewTab = (url: string) => {
               <!-- <CarbonUserAvatarFilled mr="2" /> -->
               <div class="i-carbon-user-avatar-filled" mr="2"></div>
               <div class="ellipsis-single">
-                {{ it.author }}
+                {{ it.author || "Unknown" }}
               </div>
             </div>
             <div class="ellipsis-single" text="sm" w="100px">
