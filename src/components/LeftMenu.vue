@@ -2,12 +2,7 @@
 import FeildSetItem from "./FeildSetItem.vue";
 import FeildSet from "./FeildSet.vue";
 import { ref } from "vue";
-type rssType = {
-  text?: string;
-  path?: string;
-  icon?: string;
-  number?: number;
-};
+import type { rssType } from "@/utils/index";
 
 const data = ref<Array<rssType>>([
   {

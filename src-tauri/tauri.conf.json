@@ -55,6 +55,10 @@
         "all": true,
         "request": true,
         "scope": ["https://*.*/*", "http://*.*/*"]
+      },
+      "fs": {
+        "all": true,
+        "scope": ["*"]
       }
     },
     "windows": [
