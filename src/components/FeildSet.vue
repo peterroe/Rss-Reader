@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useDialog } from "@/hooks/useDialog";
+import { postRssMessage } from "@/utils/request";
+import { sendNotification } from "@tauri-apps/api/notification";
+import { message } from "ungeui";
 
 const props = defineProps<{
   title: string;
@@ -10,6 +13,17 @@ const emit = defineEmits<{
 }>();
 
 const { name, path, visible, openDialog, closeDialog } = useDialog();
+
+const postNewSource = () => {
+  if (name.value && path.value) {
+    postRssMessage(path.value);
+  } else {
+    message({
+      text: "Please fill completely",
+      initOffset: 30,
+    });
+  }
+};
 </script>
 
 <template>
@@ -43,18 +57,8 @@ const { name, path, visible, openDialog, closeDialog } = useDialog();
 
       <template #footer>
         <u-button mr="4" @click="closeDialog">Cancel</u-button>
-        <u-button px="4" deep>OK</u-button>
+        <u-button px="4" deep @click="postNewSource">OK</u-button>
       </template>
     </u-dialog>
   </div>
 </template>
-
-<style>
-.u-dialog,
-.u-input__input-el {
-  font-family: "xknl";
-}
-.u-dialog-mask {
-  border-radius: 1rem;
-}
-</style>

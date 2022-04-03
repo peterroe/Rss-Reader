@@ -4,8 +4,9 @@ import { fetch } from "@tauri-apps/api/http";
 import { sendNotification } from "@tauri-apps/api/notification";
 // https://github.com/peterroe/xtj
 import XmlToJs from "xtj";
+import { message } from "ungeui";
 
-export default function getRssMessage(url: string): Promise<any> {
+export function getRssMessage(url: string): Promise<any> {
   return new Promise((resolve, reject) => {
     fetch(url, {
       // https://tauri.studio/docs/api/js/enums/http.ResponseType
@@ -19,8 +20,38 @@ export default function getRssMessage(url: string): Promise<any> {
         resolve(target.rss[0].channel);
       })
       .catch((err) => {
-        sendNotification("URL error");
         reject(err);
       });
   });
+}
+
+export async function isRssMessageEffective(url: string) {
+  return await getRssMessage(url)
+    .then((value) => {
+      console.log(value, "value");
+    })
+    .catch((err) => {
+      console.log(123456);
+      // return false
+    });
+}
+
+export function postRssMessage(url: string = "") {
+  getRssMessage(url)
+    .then((value) => {
+      // get successfully
+      sendNotification({
+        title: "Rss-Reader hint:",
+        body: "Added successfully",
+      });
+    })
+    .catch((err) => {
+      // get fail
+      console.log(url);
+      message({
+        text: "Please make sure the xml url is correct",
+        initOffset: 30,
+        icon: "danger",
+      });
+    });
 }

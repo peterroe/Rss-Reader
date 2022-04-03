@@ -4,7 +4,7 @@ import { ref, watch } from "vue";
 import * as dayjs from "dayjs";
 // https://tauri.studio/docs/api/js/classes/window.WebviewWindow
 import { WebviewWindow } from "@tauri-apps/api/window";
-import getRssMessage from "@/utils/request";
+import { getRssMessage } from "@/utils/request";
 import { getItems, getMainIdea, itemType, mainIdeaType } from "@/utils/index";
 import { useRssSource } from "@/store/rssSource";
 import { useLoadingState } from "@/store/loadingState";

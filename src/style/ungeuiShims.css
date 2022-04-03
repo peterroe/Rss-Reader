@@ -1,0 +1,8 @@
+.u-dialog,
+.u-input__input-el,
+.u-message-wrapper {
+  font-family: "xknl";
+}
+.u-dialog-mask {
+  border-radius: 1rem;
+}

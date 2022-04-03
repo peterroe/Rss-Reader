@@ -11,6 +11,7 @@ import { initDataJson } from "./utils/initDataJson";
 // https://github.com/UngeUI/ungeui
 import UngeUI from "ungeui";
 import "ungeui/dist/style.css";
+import "@/style/ungeuiShims.css";
 
 // windicss
 // https://cn.windicss.org/guide/
