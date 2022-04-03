@@ -1,5 +1,5 @@
 export type rssType = {
-  text?: string;
+  name?: string;
   path?: string;
   icon?: string;
   number?: number;

@@ -5,6 +5,7 @@ export const useRssSource = defineStore("rssSource", {
     return {
       path: "https://antfu.me/feed.xml",
       title: "Rss Reader",
+      data: [],
     };
   },
   actions: {
@@ -13,6 +14,9 @@ export const useRssSource = defineStore("rssSource", {
     },
     setTitle(title) {
       this.title = title;
+    },
+    setData(data) {
+      this.data = data;
     },
   },
 });
