@@ -8,6 +8,10 @@ import { createPinia } from "pinia";
 import vilt from "vue-img-lazy-tiny";
 import { initDataJson } from "./utils/initDataJson";
 
+// https://github.com/UngeUI/ungeui
+import UngeUI from "ungeui";
+import "ungeui/dist/style.css";
+
 // windicss
 // https://cn.windicss.org/guide/
 import "windi.css";
@@ -16,7 +20,12 @@ import "windi.css";
 // https://github.com/unocss/unocss
 import "uno.css";
 
-createApp(App).use(router).use(createPinia()).use(vilt).mount("#app");
+createApp(App)
+  .use(router)
+  .use(createPinia())
+  .use(vilt)
+  .use(UngeUI)
+  .mount("#app");
 
 // read/write init json file
 initDataJson();

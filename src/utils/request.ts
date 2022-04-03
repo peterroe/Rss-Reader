@@ -1,5 +1,7 @@
 // https://tauri.studio/docs/api/js/modules/http#fetch
 import { fetch } from "@tauri-apps/api/http";
+// https://tauri.studio/docs/api/js/modules/notification#sendNotification
+import { sendNotification } from "@tauri-apps/api/notification";
 // https://github.com/peterroe/xtj
 import XmlToJs from "xtj";
 
@@ -17,6 +19,7 @@ export default function getRssMessage(url: string): Promise<any> {
         resolve(target.rss[0].channel);
       })
       .catch((err) => {
+        sendNotification("URL error");
         reject(err);
       });
   });

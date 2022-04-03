@@ -15,11 +15,15 @@ watch(
     data.value = newValue;
   }
 );
+
+const feat = () => {
+  console.log(123);
+};
 </script>
 
 <template>
   <div flex="~ col" text="[#d7dde4]">
-    <FeildSet title="FEEDS">
+    <FeildSet title="FEEDS" @update="feat">
       <template v-for="it in data" :key="it.name">
         <FeildSetItem :text="it.name" :path="it.path" :icon="it.icon" />
       </template>
