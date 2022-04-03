@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "release": "cp -r ./src-tauri/target/release/bundle/msi/ ./release/",
+    "release": "cp -r ./src-tauri/target/release/bundle/msi/* ./release/",
     "tauri:build": "rimraf ./src-tauri/target/release/bundle/msi/* && vue-cli-service tauri:build",
     "tauri:dev": "vue-cli-service tauri:dev",
     "tauri:serve": "vue-cli-service tauri:serve"
