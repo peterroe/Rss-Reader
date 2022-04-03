@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Layout from "@/layout/index.vue";
+import { useRssSource } from "@/store/rssSource";
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -16,6 +17,11 @@ const router = createRouter({
       ],
     },
   ],
+});
+
+router.beforeEach(() => {
+  const store = useRssSource();
+  store.initState();
 });
 
 export default router;

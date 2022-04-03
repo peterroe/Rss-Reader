@@ -25,17 +25,6 @@ export function getRssMessage(url: string): Promise<any> {
   });
 }
 
-export async function isRssMessageEffective(url: string) {
-  return await getRssMessage(url)
-    .then((value) => {
-      console.log(value, "value");
-    })
-    .catch((err) => {
-      console.log(123456);
-      // return false
-    });
-}
-
 export function postRssMessage(url: string = "") {
   getRssMessage(url)
     .then((value) => {

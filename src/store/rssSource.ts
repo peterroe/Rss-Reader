@@ -1,3 +1,4 @@
+import { initDataJson } from "@/utils/initDataJson";
 import { defineStore } from "pinia";
 
 export const useRssSource = defineStore("rssSource", {
@@ -9,6 +10,9 @@ export const useRssSource = defineStore("rssSource", {
     };
   },
   actions: {
+    initState() {
+      initDataJson();
+    },
     setPath(path) {
       this.path = path;
     },

@@ -6,7 +6,6 @@ import router from "./router/index";
 import { createPinia } from "pinia";
 // https://github.com/peterroe/vue-img-lazy-tiny
 import vilt from "vue-img-lazy-tiny";
-import { initDataJson } from "./utils/initDataJson";
 
 // https://github.com/UngeUI/ungeui
 import UngeUI from "ungeui";
@@ -28,5 +27,8 @@ createApp(App)
   .use(UngeUI)
   .mount("#app");
 
-// read/write init json file
-initDataJson();
+/* Todo:
+ * make a icon List when add rss source
+ * ungeui js -> ts
+ * ungeui message.config -> feat: props.text
+ */
