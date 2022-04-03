@@ -2,7 +2,7 @@
 import FeildSetItem from "./FeildSetItem.vue";
 import FeildSet from "./FeildSet.vue";
 import { ref, watch } from "vue";
-import type { rssType } from "@/utils/index";
+import type { rssType } from "@/types/index";
 import { useRssSource } from "@/store/rssSource";
 
 const store = useRssSource();
@@ -11,8 +11,8 @@ let data = ref<Array<rssType>>([]);
 
 watch(
   () => store.data,
-  (newv) => {
-    data.value = newv;
+  (newValue) => {
+    data.value = newValue;
   }
 );
 </script>

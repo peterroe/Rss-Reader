@@ -10,6 +10,7 @@ type rssType = {
 
 const store = useRssSource();
 
+// https://vuejs.org/api/sfc-script-setup.html#default-props-values-when-using-type-declaration
 const props = withDefaults(defineProps<rssType>(), {});
 </script>
 

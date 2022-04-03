@@ -1,4 +1,4 @@
-import type { rssType } from "./index";
+import type { rssType } from "@/types";
 import { writeFileSync, readFileSync } from "./fileIO";
 import { useRssSource } from "@/store/rssSource";
 
@@ -46,7 +46,7 @@ const rawData: dataJsonType = {
 export async function initDataJson() {
   const store = useRssSource();
 
-  const res = await readFileSync("test.json");
+  const res = await readFileSync("rssSource.json");
 
   if (res) {
     const o: dataJsonType = JSON.parse(res as string).value;
@@ -54,7 +54,7 @@ export async function initDataJson() {
   } else {
     await writeFileSync({
       contents: JSON.stringify(rawData),
-      path: "test.json",
+      path: "rssSource.json",
     });
   }
 }

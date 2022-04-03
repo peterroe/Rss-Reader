@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from "vue";
-import dayjs from "dayjs";
+import { ref, watch } from "vue";
+// https://day.js.org/docs/en/display/format
+import * as dayjs from "dayjs";
+// https://tauri.studio/docs/api/js/classes/window.WebviewWindow
+import { WebviewWindow } from "@tauri-apps/api/window";
 import getRssMessage from "@/utils/request";
 import { getItems, getMainIdea, itemType, mainIdeaType } from "@/utils/index";
-import { WebviewWindow } from "@tauri-apps/api/window";
 import { useRssSource } from "@/store/rssSource";
 import { useLoadingState } from "@/store/loadingState";
 
@@ -13,6 +15,7 @@ const mainIdea = ref<mainIdeaType>({});
 const store = useRssSource();
 const loadingState = useLoadingState();
 
+// watch the store.path's change, and update the RssReader.vue's items
 watch(
   () => store.path,
   async () => {

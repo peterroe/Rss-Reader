@@ -5,9 +5,9 @@
 //   number?: number
 // }
 
-export interface rssType {
-  text?: string;
+export type rssType = {
+  name?: string;
   path?: string;
   icon?: string;
   number?: number;
-}
+};

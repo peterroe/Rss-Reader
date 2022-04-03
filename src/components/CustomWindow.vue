@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// https://tauri.studio/docs/api/js/modules/window#appwindow
 import { appWindow } from "@tauri-apps/api/window";
 import { onMounted } from "vue";
 onMounted(() => {

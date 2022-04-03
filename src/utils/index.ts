@@ -1,10 +1,3 @@
-export type rssType = {
-  name?: string;
-  path?: string;
-  icon?: string;
-  number?: number;
-};
-
 export type itemType = {
   title?: string;
   description?: string;
