@@ -6,8 +6,8 @@
 // }
 
 export type rssType = {
-  name?: string;
-  path?: string;
+  name: string;
+  path: string;
   icon?: string;
   number?: number;
 };

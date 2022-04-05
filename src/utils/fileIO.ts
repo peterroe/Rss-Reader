@@ -6,6 +6,9 @@ import { appDir, join } from "@tauri-apps/api/path";
 // https://tauri.studio/docs/api/js/modules/notification
 import { sendNotification } from "@tauri-apps/api/notification";
 
+import type { dataJsonType } from "./initDataJson";
+import { rssType } from "@/types";
+
 export async function writeFileSync(
   file: FsTextFileOption,
   options?: FsOptions
@@ -32,7 +35,7 @@ export async function writeFileSync(
     });
 }
 
-export async function readFileSync(fileName: string): Promise<string | void> {
+export async function readFileSync(fileName: string): Promise<dataJsonType> {
   const basePath = await appDir();
   const filePath = await join(basePath, fileName);
 
@@ -42,7 +45,7 @@ export async function readFileSync(fileName: string): Promise<string | void> {
         title: "文件读取成功",
         body: `${value}`,
       });
-      return value;
+      return JSON.parse(value);
     })
     .catch((err) => {
       sendNotification({
@@ -50,4 +53,21 @@ export async function readFileSync(fileName: string): Promise<string | void> {
         body: err.message,
       });
     });
+}
+
+export async function appendFileSync({
+  value,
+  fileName,
+}: {
+  value: rssType;
+  fileName: string;
+}): Promise<void> {
+  console.log(value, fileName, "etc");
+  return readFileSync(fileName).then((res) => {
+    res.value.push(value);
+    writeFileSync({
+      contents: JSON.stringify(res),
+      path: fileName,
+    });
+  });
 }

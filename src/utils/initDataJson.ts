@@ -48,9 +48,8 @@ export async function initDataJson() {
 
   const res = await readFileSync("rssSource.json");
 
-  if (res) {
-    const o: dataJsonType = JSON.parse(res as string).value;
-    store.setData(o);
+  if (res as dataJsonType) {
+    store.setData(res?.value);
   } else {
     await writeFileSync({
       contents: JSON.stringify(rawData),
