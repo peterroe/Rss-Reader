@@ -4,15 +4,14 @@ import type { FsTextFileOption, FsOptions } from "@tauri-apps/api/fs";
 // https://tauri.studio/docs/api/js/modules/path
 import { appDir, join } from "@tauri-apps/api/path";
 // https://tauri.studio/docs/api/js/modules/notification
-import { sendNotification } from "@tauri-apps/api/notification";
-
+//import { sendNotification } from "@tauri-apps/api/notification";
 import type { dataJsonType } from "./initDataJson";
 import { rssType } from "@/types";
 
 export async function writeFileSync(
   file: FsTextFileOption,
   options?: FsOptions
-): Promise<void> {
+): Promise<Array<rssType>> {
   console.log("写入文件");
   const basePath = await appDir();
   const filePath = await join(basePath, file.path);
@@ -22,16 +21,11 @@ export async function writeFileSync(
     path: filePath,
   })
     .then((value) => {
-      sendNotification({
-        title: "文件写入成功",
-        body: `${filePath}`,
-      });
+      console.log("file write success");
+      return JSON.parse(file.contents).value;
     })
     .catch((err) => {
-      sendNotification({
-        title: "文件写入失败",
-        body: err.message,
-      });
+      console.log("file write error");
     });
 }
 
@@ -41,17 +35,10 @@ export async function readFileSync(fileName: string): Promise<dataJsonType> {
 
   return readTextFile(filePath)
     .then((value) => {
-      sendNotification({
-        title: "Rss-Reader:",
-        body: `🎉Welecome to rss-reader`,
-      });
       return JSON.parse(value);
     })
     .catch((err) => {
-      sendNotification({
-        title: "Rss-Reader:",
-        body: "Sorry, we can not find the file",
-      });
+      console.log("initDataJson:");
     });
 }
 

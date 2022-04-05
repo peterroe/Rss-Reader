@@ -51,9 +51,11 @@ export async function initDataJson() {
   if (res as dataJsonType) {
     store.setData(res?.value);
   } else {
-    await writeFileSync({
+    writeFileSync({
       contents: JSON.stringify(rawData),
       path: "rssSource.json",
+    }).then((value) => {
+      store.setData(value);
     });
   }
 }

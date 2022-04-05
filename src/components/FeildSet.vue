@@ -4,6 +4,7 @@ import { useDialog } from "@/hooks/useDialog";
 import { sendNotification } from "@tauri-apps/api/notification";
 import { message } from "ungeui";
 import { appendFileSync } from "@/utils/fileIO";
+import { getRssMessage } from "@/utils/request";
 
 const props = defineProps<{
   title: string;
@@ -16,15 +17,18 @@ const { name, path, visible, openDialog, closeDialog } = useDialog();
 
 const postNewSource = () => {
   if (name.value && path.value) {
-    appendFileSync({
-      value: {
-        name: name.value,
-        path: path.value,
-      },
-      fileName: "rssSource.json",
-    })
+    getRssMessage(path.value)
       .then((value) => {
-        message.success({
+        return appendFileSync({
+          value: {
+            name: name.value,
+            path: path.value,
+          },
+          fileName: "rssSource.json",
+        });
+      })
+      .then((value) => {
+        message({
           text: "append new File successfully",
           initOffset: 30,
           icon: "success",
@@ -33,7 +37,11 @@ const postNewSource = () => {
         //todo reload
       })
       .catch((err) => {
-        message.danger("can't append new File");
+        message({
+          text: "can't get rss message",
+          initOffset: 30,
+          icon: "danger",
+        });
       });
   } else {
     message({
