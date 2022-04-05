@@ -42,15 +42,15 @@ export async function readFileSync(fileName: string): Promise<dataJsonType> {
   return readTextFile(filePath)
     .then((value) => {
       sendNotification({
-        title: "文件读取成功",
-        body: `${value}`,
+        title: "Rss-Reader:",
+        body: `🎉Welecome to rss-reader`,
       });
       return JSON.parse(value);
     })
     .catch((err) => {
       sendNotification({
-        title: "文件读取失败",
-        body: err.message,
+        title: "Rss-Reader:",
+        body: "Sorry, we can not find the file",
       });
     });
 }
