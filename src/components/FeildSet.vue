@@ -12,7 +12,7 @@ const emit = defineEmits<{
   (e: "update"): void;
 }>();
 
-const { name, path, icon, visible, openDialog, closeDialog } = useDialog();
+const { name, path, visible, openDialog, closeDialog } = useDialog();
 
 const postNewSource = () => {
   if (name.value && path.value) {
@@ -49,8 +49,8 @@ const postNewSource = () => {
     >
       <div mb="2">Name:</div>
       <u-input v-model:value="name" placeholder="eg: antfu"></u-input>
-      <div mb="2">Icon:</div>
-      <u-input v-model:value="icon" placeholder="eg: antfu"></u-input>
+      <!-- <div mb="2">Icon:</div>
+      <u-input v-model:value="icon" placeholder="eg: antfu"></u-input> -->
       <div my="2">Xml url:</div>
       <u-input
         v-model:value="path"

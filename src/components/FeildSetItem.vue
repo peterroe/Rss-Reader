@@ -27,7 +27,8 @@ const props = withDefaults(defineProps<rssType>(), {});
     @click="store.setPath(props.path)"
   >
     <div mr="2">
-      <div :class="props.icon"></div>
+      <!-- tudo: feat icon -->
+      <!-- <div :class="props.icon"></div> -->
     </div>
     <div flex="1" style="font-family: 'xknl'">
       {{ props.text }}
