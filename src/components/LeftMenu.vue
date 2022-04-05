@@ -13,6 +13,9 @@ watch(
   () => store.data,
   (newValue) => {
     data.value = newValue;
+  },
+  {
+    immediate: true,
   }
 );
 
