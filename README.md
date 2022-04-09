@@ -36,3 +36,13 @@ Among the products of desktop programs, there are few products with beautiful in
 ## Preview
 
 ![img](./img/demo.gif)
+
+## Snapshot
+
+<br/>
+
+![img](./img/snapshot_one.png)
+
+<br/>
+
+![img](./img/snapshot_two.png)
