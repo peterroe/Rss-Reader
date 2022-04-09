@@ -1,3 +1,5 @@
+![img](./img/logo.png)
+
 ## Rss-Reader
 
 A DeskTop rss-Reader app base on [tauri-app](https://github.com/tauri-apps/tauri).
