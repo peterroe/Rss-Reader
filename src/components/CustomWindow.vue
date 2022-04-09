@@ -1,29 +1,28 @@
 <script setup lang="ts">
 // https://tauri.studio/docs/api/js/modules/window#appwindow
 import { appWindow } from "@tauri-apps/api/window";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+
+const closeRef = ref();
+const minimizeRef = ref();
+const maximizeRef = ref();
+
 onMounted(() => {
-  document
-    .getElementById("titlebar-minimize")
-    .addEventListener("click", () => appWindow.minimize());
-  document
-    .getElementById("titlebar-maximize")
-    .addEventListener("click", () => appWindow.toggleMaximize());
-  document
-    .getElementById("titlebar-close")
-    .addEventListener("click", () => appWindow.close());
+  minimizeRef.value.addEventListener("click", () => appWindow.minimize());
+  maximizeRef.value.addEventListener("click", () => appWindow.toggleMaximize());
+  closeRef.value.addEventListener("click", () => appWindow.close());
 });
 </script>
 
 <template>
   <div data-tauri-drag-region class="titlebar">
-    <div class="titlebar-button" id="titlebar-close">
+    <div ref="closeRef" class="titlebar-button" id="titlebar-close">
       <div text="xs [#ff5f58]" class="i-carbon-circle-solid"></div>
     </div>
-    <div class="titlebar-button" id="titlebar-minimize">
+    <div ref="minimizeRef" class="titlebar-button" id="titlebar-minimize">
       <div text="xs [#ffbd2e]" class="i-carbon-circle-solid"></div>
     </div>
-    <div class="titlebar-button" id="titlebar-maximize">
+    <div ref="maximizeRef" class="titlebar-button" id="titlebar-maximize">
       <div text="xs [#18c132]" class="i-carbon-circle-solid"></div>
     </div>
   </div>
