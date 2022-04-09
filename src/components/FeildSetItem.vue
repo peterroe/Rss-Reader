@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<rssType>(), {});
     rounded="md"
     hover:bg="[#233e61]"
     hover:cursor="pointer"
-    :class="{ 'bg-[#233e61]': store.path === props.path }"
+    :class="['feildSetItem', { 'bg-[#233e61]': store.path === props.path }]"
     @click="store.setPath(props.path)"
   >
     <div mr="2">
@@ -36,5 +36,14 @@ const props = withDefaults(defineProps<rssType>(), {});
     <div>
       {{ props.number }}
     </div>
+    <div>
+      <div display="none" class="delete i-carbon-delete"></div>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.feildSetItem:hover .delete {
+  display: block;
+}
+</style>

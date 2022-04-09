@@ -1,5 +1,12 @@
 import { initDataJson } from "@/utils/initDataJson";
 import { defineStore } from "pinia";
+import { rssType } from "@/types";
+
+export type rssSourceType = {
+  path: string;
+  title: string;
+  data: rssType[];
+};
 
 export const useRssSource = defineStore("rssSource", {
   state: () => {
@@ -7,7 +14,7 @@ export const useRssSource = defineStore("rssSource", {
       path: "https://antfu.me/feed.xml",
       title: "Rss Reader",
       data: [],
-    };
+    } as rssSourceType;
   },
   actions: {
     initState() {
@@ -21,6 +28,9 @@ export const useRssSource = defineStore("rssSource", {
     },
     setData(data) {
       this.data = data;
+    },
+    deletePath(path) {
+      this.data = this.data.filter((item) => item.path !== path);
     },
   },
 });
