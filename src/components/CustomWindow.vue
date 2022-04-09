@@ -18,25 +18,13 @@ onMounted(() => {
 <template>
   <div data-tauri-drag-region class="titlebar">
     <div class="titlebar-button" id="titlebar-close">
-      <img
-        w="26px"
-        src="https://api.iconify.design/ci:dot-05-xl.svg?color=%23ff5f58"
-        alt="close"
-      />
+      <div text="xs [#ff5f58]" class="i-carbon-circle-solid"></div>
     </div>
     <div class="titlebar-button" id="titlebar-minimize">
-      <img
-        w="26px"
-        src="https://api.iconify.design/ci:dot-05-xl.svg?color=%23ffbd2e"
-        alt="minimize"
-      />
+      <div text="xs [#ffbd2e]" class="i-carbon-circle-solid"></div>
     </div>
     <div class="titlebar-button" id="titlebar-maximize">
-      <img
-        w="26px"
-        src="https://api.iconify.design/ci:dot-05-xl.svg?color=%2318c132"
-        alt="maximize"
-      />
+      <div text="xs [#18c132]" class="i-carbon-circle-solid"></div>
     </div>
   </div>
 </template>
