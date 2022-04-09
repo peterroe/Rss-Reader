@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import IconSet from "@/components/IconSet.vue";
 import { useDialog } from "@/hooks/useDialog";
 import { sendNotification } from "@tauri-apps/api/notification";
 import { message } from "ungeui";
@@ -13,16 +14,17 @@ const emit = defineEmits<{
   (e: "update"): void;
 }>();
 
-const { name, path, visible, openDialog, closeDialog } = useDialog();
+const { name, path, icon, visible, openDialog, closeDialog } = useDialog();
 
 const postNewSource = () => {
-  if (name.value && path.value) {
+  if (name.value && path.value && icon.value) {
     getRssMessage(path.value)
       .then((value) => {
         return appendFileSync({
           value: {
             name: name.value,
             path: path.value,
+            icon: icon.value,
           },
           fileName: "rssSource.json",
         });
@@ -73,16 +75,21 @@ const postNewSource = () => {
       enter-class="fadeIn"
       leave-class="fadeOut"
     >
-      <div mb="2">Name:</div>
-      <u-input v-model:value="name" placeholder="eg: antfu"></u-input>
-      <!-- <div mb="2">Icon:</div>
-      <u-input v-model:value="icon" placeholder="eg: antfu"></u-input> -->
-      <div my="2">Xml url:</div>
-      <u-input
-        v-model:value="path"
-        placeholder="eg: https://antfu.me/feed.xml"
-      ></u-input>
-
+      <div flex="~" gap="2">
+        <div w="1/3">
+          <div mb="2">Name:</div>
+          <u-input v-model:value="name" placeholder="eg: antfu"></u-input>
+        </div>
+        <div w="2/3">
+          <div mb="2">Xml url:</div>
+          <u-input
+            v-model:value="path"
+            placeholder="eg: https://antfu.me/feed.xml"
+          ></u-input>
+        </div>
+      </div>
+      <div my="2">Icon:</div>
+      <IconSet v-model:icon="icon" />
       <template #footer>
         <u-button mr="4" @click="closeDialog">Cancel</u-button>
         <u-button px="4" deep @click="postNewSource">OK</u-button>
