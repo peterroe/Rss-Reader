@@ -13,12 +13,12 @@ const rawData: dataJsonType = {
     {
       name: "少数派",
       path: "https://sspai.com/feed",
-      icon: "i-carbon-rss",
+      icon: "i-carbon-contour-finding",
     },
     {
       name: "36氪",
       path: "https://36kr.com/feed",
-      icon: "i-carbon-star",
+      icon: "i-carbon-linux",
     },
     {
       name: "设计日报",
@@ -28,7 +28,7 @@ const rawData: dataJsonType = {
     {
       name: "antfu",
       path: "https://antfu.me/feed.xml",
-      icon: "i-carbon-3rd-party-connected",
+      icon: "i-carbon-navaid-tacan",
     },
     {
       name: "机核",
