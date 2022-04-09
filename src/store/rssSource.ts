@@ -11,14 +11,16 @@ export type rssSourceType = {
 export const useRssSource = defineStore("rssSource", {
   state: () => {
     return {
-      path: "https://antfu.me/feed.xml",
+      path: "",
       title: "Rss Reader",
       data: [],
     } as rssSourceType;
   },
   actions: {
-    initState() {
-      initDataJson();
+    async initState() {
+      await initDataJson();
+      this.setPath(this.data[0]?.path);
+      this.setTitle(this.data[0]?.name);
     },
     setPath(path) {
       this.path = path;
