@@ -28,7 +28,7 @@ const props = withDefaults(defineProps<rssType>(), {});
   >
     <div mr="2">
       <!-- tudo: feat icon -->
-      <!-- <div :class="props.icon"></div> -->
+      <div :class="props.icon"></div>
     </div>
     <div flex="1" style="font-family: 'xknl'">
       {{ props.text }}

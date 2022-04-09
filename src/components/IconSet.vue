@@ -24,6 +24,20 @@ const iconList = ref<Array<string>>([
   "i-carbon-money",
   "i-carbon-navaid-tacan",
   "i-carbon-lifesaver",
+  "i-carbon-earth",
+  "i-carbon-bat",
+  "i-carbon-send-alt-filled",
+  "i-carbon-bee",
+  "i-carbon-crop-health",
+  "i-carbon-drone",
+  "i-carbon-model",
+  "i-carbon-password",
+  "i-carbon-worship-jewish",
+  "i-carbon-fish",
+  "i-carbon-monster",
+  "i-carbon-mountain",
+  "i-carbon-quadrant-plot",
+  "i-carbon-store",
 ]);
 
 const props = defineProps<{
