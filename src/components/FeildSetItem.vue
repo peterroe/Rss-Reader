@@ -41,7 +41,7 @@ const props = withDefaults(defineProps<rssType>(), {});
       <div
         display="none"
         class="delete i-carbon-delete"
-        @click="store.deletePath(props.path)"
+        @click="store.deletePath(props.id)"
       ></div>
     </div>
   </div>

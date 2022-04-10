@@ -1,8 +1,9 @@
-import { initDataJson } from "@/utils/initDataJson";
+import { dataJsonType, initDataJson } from "@/utils/initDataJson";
 import { defineStore } from "pinia";
 import { rssType } from "@/types";
 import { getRssMessage } from "./../utils/request";
-import { appendFileSync } from "@/utils/fileIO";
+import { appendFileSync, writeFileSync } from "@/utils/fileIO";
+import { message } from "ungeui";
 
 export type rssSourceType = {
   id: number;
@@ -30,13 +31,13 @@ export const useRssSource = defineStore("rssSource", {
     setId(id: number) {
       this.id = id;
     },
-    setPath(path) {
+    setPath(path: string) {
       this.path = path;
     },
-    setTitle(title) {
+    setTitle(title: string) {
       this.title = title;
     },
-    setData(data) {
+    setData(data: Array<rssType>) {
       this.data = data;
     },
     appendData({ name, path, icon }: rssType) {
@@ -53,8 +54,18 @@ export const useRssSource = defineStore("rssSource", {
         });
       });
     },
-    deletePath(path) {
-      this.data = this.data.filter((item) => item.path !== path);
+    async deletePath(id) {
+      this.data = this.data.filter((item) => item.id !== id);
+      let newData: dataJsonType = {
+        name: "rssSourcePaths",
+        value: this.data,
+      };
+      writeFileSync({
+        contents: JSON.stringify(newData),
+        path: "rssSource.json",
+      }).then(() => {
+        message.success("delete success");
+      });
     },
   },
 });
