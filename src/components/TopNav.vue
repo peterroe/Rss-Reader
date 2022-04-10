@@ -21,18 +21,7 @@ const store = useRssSource();
     style="font-family: 'xknl'"
   >
     <div>{{ store.title }}</div>
-    <button
-      border="~ solid [#50c0ad]"
-      rounded="md"
-      h="35px"
-      px="2"
-      text="[#fff]"
-      leading="35px"
-      bg="[#50c0ad]"
-      hover:bg="[#368275]"
-    >
-      Subscribe
-    </button>
+    <u-button deep size="mini" leading="32px" px="2"> Subscribe </u-button>
   </div>
 </template>
 
