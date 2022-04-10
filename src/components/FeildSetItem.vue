@@ -19,6 +19,7 @@ const props = withDefaults(defineProps<rssType>(), {});
     py="2"
     px="2"
     mx="6"
+    my="2"
     flex="~"
     rounded="md"
     hover:bg="[#233e61]"
