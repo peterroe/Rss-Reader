@@ -64,7 +64,7 @@ export const useRssSource = defineStore("rssSource", {
         contents: JSON.stringify(newData),
         path: "rssSource.json",
       }).then(() => {
-        message.success("delete success");
+        message.success("Delete successfuly");
       });
     },
   },

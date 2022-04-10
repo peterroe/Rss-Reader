@@ -39,6 +39,7 @@ const props = withDefaults(defineProps<rssType>(), {});
     </div>
     <div>
       <div
+        v-show="store.id !== props.id"
         display="none"
         class="delete i-carbon-delete"
         @click="store.deletePath(props.id)"
