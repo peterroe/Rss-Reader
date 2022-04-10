@@ -15,9 +15,9 @@ const mainIdea = ref<mainIdeaType>({});
 const store = useRssSource();
 const loadingState = useLoadingState();
 
-// watch the store.path's change, and update the RssReader.vue's items
+// watch the store.id's change, and update the RssReader.vue's items
 watch(
-  () => store.path,
+  () => store.id,
   async () => {
     if (!store.path) return;
     loadingState.setLoading(true);

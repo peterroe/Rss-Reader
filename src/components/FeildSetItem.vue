@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useRssSource } from "@/store/rssSource";
-
 type rssType = {
-  text?: string;
+  id?: number;
+  name?: string;
   path?: string;
   icon?: string;
   number?: number;
@@ -23,21 +23,25 @@ const props = withDefaults(defineProps<rssType>(), {});
     rounded="md"
     hover:bg="[#233e61]"
     hover:cursor="pointer"
-    :class="['feildSetItem', { 'bg-[#233e61]': store.path === props.path }]"
-    @click="store.setPath(props.path)"
+    :class="['feildSetItem', { 'bg-[#233e61]': store.id === props.id }]"
+    @click="store.setId(props.id), store.setPath(props.path)"
   >
     <div mr="2">
       <!-- tudo: feat icon -->
       <div :class="props.icon"></div>
     </div>
     <div flex="1" style="font-family: 'xknl'">
-      {{ props.text }}
+      {{ props.name }}
     </div>
     <div>
       {{ props.number }}
     </div>
     <div>
-      <div display="none" class="delete i-carbon-delete"></div>
+      <div
+        display="none"
+        class="delete i-carbon-delete"
+        @click="store.deletePath(props.path)"
+      ></div>
     </div>
   </div>
 </template>
