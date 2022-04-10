@@ -35,6 +35,7 @@ const postNewSource = () => {
           icon: "success",
         });
         closeDialog();
+        location.reload();
         //todo reload
       })
       .catch((err) => {

@@ -19,6 +19,7 @@ const loadingState = useLoadingState();
 watch(
   () => store.path,
   async () => {
+    if (!store.path) return;
     loadingState.setLoading(true);
     const value = await getRssMessage(store.path);
 

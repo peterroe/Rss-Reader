@@ -12,7 +12,7 @@ export async function writeFileSync(
   file: FsTextFileOption,
   options?: FsOptions
 ): Promise<Array<rssType>> {
-  console.log("写入文件");
+  console.log(`writeFile: ${file.contents}`);
   const basePath = await appDir();
   const filePath = await join(basePath, file.path);
 
@@ -30,6 +30,7 @@ export async function writeFileSync(
 }
 
 export async function readFileSync(fileName: string): Promise<dataJsonType> {
+  console.log(`readFile: ${fileName}`);
   const basePath = await appDir();
   const filePath = await join(basePath, fileName);
 
@@ -38,7 +39,7 @@ export async function readFileSync(fileName: string): Promise<dataJsonType> {
       return JSON.parse(value);
     })
     .catch((err) => {
-      console.log("initDataJson:");
+      console.log("Can't readFile");
     });
 }
 
@@ -48,11 +49,12 @@ export async function appendFileSync({
 }: {
   value: rssType;
   fileName: string;
-}): Promise<void> {
-  console.log(value, fileName, "etc");
-  return readFileSync(fileName).then((res) => {
+}): Promise<Array<rssType>> {
+  console.log(`appendFile: ${fileName}, value: ${JSON.stringify(value)}`);
+
+  return readFileSync(fileName).then(async (res) => {
     res.value.push(value);
-    writeFileSync({
+    return writeFileSync({
       contents: JSON.stringify(res),
       path: fileName,
     });
