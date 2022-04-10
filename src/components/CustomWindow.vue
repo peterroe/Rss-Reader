@@ -30,7 +30,7 @@ onMounted(() => {
 
 <style scoped>
 .titlebar {
-  z-index: 999;
+  z-index: 100;
   height: 30px;
   background: #282d35;
   user-select: none;
