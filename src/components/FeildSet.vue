@@ -6,6 +6,8 @@ import { sendNotification } from "@tauri-apps/api/notification";
 import { message } from "ungeui";
 import { appendFileSync } from "@/utils/fileIO";
 import { getRssMessage } from "@/utils/request";
+import { useRssSource } from "@/store/rssSource";
+import { rssType } from "@/types";
 
 const props = defineProps<{
   title: string;
@@ -14,21 +16,18 @@ const emit = defineEmits<{
   (e: "update"): void;
 }>();
 
+const store = useRssSource();
+
 const { name, path, icon, visible, openDialog, closeDialog } = useDialog();
 
 const postNewSource = () => {
   if (name.value && path.value && icon.value) {
-    getRssMessage(path.value)
-      .then((value) => {
-        return appendFileSync({
-          value: {
-            name: name.value,
-            path: path.value,
-            icon: icon.value,
-          },
-          fileName: "rssSource.json",
-        });
-      })
+    store
+      .appendData({
+        name: name.value,
+        path: path.value,
+        icon: icon.value,
+      } as rssType)
       .then((value) => {
         message({
           text: "append new File successfully",
@@ -45,6 +44,7 @@ const postNewSource = () => {
           icon: "danger",
         });
       });
+    return;
   } else {
     message({
       text: "Please fill completely",

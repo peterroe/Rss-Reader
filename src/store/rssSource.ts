@@ -1,6 +1,8 @@
 import { initDataJson } from "@/utils/initDataJson";
 import { defineStore } from "pinia";
 import { rssType } from "@/types";
+import { getRssMessage } from "./../utils/request";
+import { appendFileSync } from "@/utils/fileIO";
 
 export type rssSourceType = {
   path: string;
@@ -30,6 +32,18 @@ export const useRssSource = defineStore("rssSource", {
     },
     setData(data) {
       this.data = data;
+    },
+    appendData({ name, path, icon }: rssType) {
+      return getRssMessage(path).then((value) => {
+        return appendFileSync({
+          value: {
+            name,
+            path,
+            icon,
+          },
+          fileName: "rssSource.json",
+        });
+      });
     },
     deletePath(path) {
       this.data = this.data.filter((item) => item.path !== path);
