@@ -35,6 +35,7 @@ watch(
 );
 
 const openInNewTab = (url: string, title: string) => {
+  // https://tauri.studio/docs/api/js/interfaces/window.WindowOptions
   const webview = new WebviewWindow("label", {
     url: url,
     maximized: true,
