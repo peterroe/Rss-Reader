@@ -34,10 +34,11 @@ watch(
   }
 );
 
-const openInNewTab = (url: string) => {
+const openInNewTab = (url: string, title: string) => {
   const webview = new WebviewWindow("label", {
     url: url,
     maximized: true,
+    title,
   });
   webview.once("tauri://created", function () {
     // webview window successfully created
@@ -101,7 +102,7 @@ const openInNewTab = (url: string) => {
         rounded="md"
         overflow="hidden"
         class="itemShadow 2xl:w-24/100"
-        @click="openInNewTab(it.link)"
+        @click="openInNewTab(it.link, it.title)"
       >
         <div h="190px">
           <img

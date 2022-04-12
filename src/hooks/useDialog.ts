@@ -9,7 +9,7 @@ export function useDialog() {
   const openDialog = () => {
     visible.value = true;
   };
-  const closeDialog = () => {
+  const closeDialog = async () => {
     visible.value = false;
   };
 
