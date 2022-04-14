@@ -21,13 +21,14 @@ const props = withDefaults(defineProps<rssType>(), {});
     mx="6"
     my="2"
     flex="~"
+    items="center"
     rounded="md"
     hover:bg="[#233e61]"
     hover:cursor="pointer"
     :class="['feildSetItem', { 'bg-[#233e61]': store.id === props.id }]"
     @click="store.setId(props.id), store.setPath(props.path)"
   >
-    <div mr="2">
+    <div mr="2" flex="~" items="center">
       <!-- tudo: feat icon -->
       <div :class="props.icon"></div>
     </div>
@@ -37,7 +38,7 @@ const props = withDefaults(defineProps<rssType>(), {});
     <div>
       {{ props.number }}
     </div>
-    <div>
+    <div flex="~" items="center">
       <div
         v-show="store.id !== props.id"
         display="none"
