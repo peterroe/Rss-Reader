@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { useRssSource } from "@/store/rssSource";
+import { message } from "ungeui";
 
 const store = useRssSource();
+
+const subscribe = () => {
+  message.info("Welcome promote this app to your friends!");
+};
 </script>
 
 <template>
@@ -18,6 +23,7 @@ const store = useRssSource();
     top="29px"
     bg="white"
     class="botton-border"
+    @click="subscribe"
     style="font-family: 'xknl'"
   >
     <div>{{ store.title }}</div>
