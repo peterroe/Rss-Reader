@@ -8,6 +8,7 @@ import { getRssMessage } from "@/utils/request";
 import { getItems, getMainIdea, itemType, mainIdeaType } from "@/utils/index";
 import { useRssSource } from "@/store/rssSource";
 import { useLoadingState } from "@/store/loadingState";
+import { sendNotification } from "@tauri-apps/api/notification";
 
 const items = ref<Array<itemType>>([]);
 const mainIdea = ref<mainIdeaType>({});
@@ -47,6 +48,10 @@ const openInNewTab = (url: string, title: string) => {
   });
   webview.once("tauri://error", function (e) {
     // an error happened creating the webview window
+    sendNotification({
+      title: "Error",
+      body: "An error happened creating the webview window",
+    });
     console.log("tauri://error", e);
   });
 };
