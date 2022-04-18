@@ -1,20 +1,4 @@
-export type itemType = {
-  title?: string;
-  description?: string;
-  link?: string;
-  guid?: string;
-  pubDate?: string;
-  author?: string;
-  item?: Array<any>;
-};
-
-export type mainIdeaType = {
-  title?: string;
-  description?: string;
-  link?: string;
-  pubDate?: string;
-  lastBuildDate?: string;
-};
+import type { mainIdeaType, itemType } from "@/types/index";
 
 export function getItems(arr: Array<any>) {
   let res: Array<itemType> = [];
