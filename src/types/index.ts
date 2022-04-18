@@ -22,10 +22,9 @@ export type itemType = {
   title?: string;
   description?: string;
   link?: string;
-  guid?: string;
+  guid?: string; //same as link
   pubDate?: string;
   author?: string;
-  item?: Array<any>;
 };
 
 /*
