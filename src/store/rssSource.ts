@@ -1,6 +1,6 @@
-import { dataJsonType, initDataJson } from "@/utils/initDataJson";
+import { initDataJson } from "@/utils/initDataJson";
 import { defineStore } from "pinia";
-import { rssType } from "@/types";
+import { rssType, dataJsonType } from "@/types";
 import { getRssMessage } from "./../utils/request";
 import { appendFileSync, writeFileSync } from "@/utils/fileIO";
 import { message } from "ungeui";

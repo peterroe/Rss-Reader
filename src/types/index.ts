@@ -40,3 +40,8 @@ export type mainIdeaType = {
   pubDate?: string;
   lastBuildDate?: string;
 };
+
+export type dataJsonType = {
+  name: string;
+  value: Array<rssType>;
+};

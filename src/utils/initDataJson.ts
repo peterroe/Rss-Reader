@@ -1,11 +1,6 @@
-import type { rssType } from "@/types";
+import type { dataJsonType } from "@/types";
 import { writeFileSync, readFileSync } from "./fileIO";
 import { useRssSource } from "@/store/rssSource";
-
-export type dataJsonType = {
-  name: string;
-  value: Array<rssType>;
-};
 
 const rawData: dataJsonType = {
   name: "rssSourcePaths",
@@ -55,8 +50,10 @@ export async function initDataJson() {
   const res = await readFileSync("rssSource.json");
 
   if (res as dataJsonType) {
+    //get rssJsonFile from windows storage
     store.setData(res?.value);
   } else {
+    //init rssJsonFile
     writeFileSync({
       contents: JSON.stringify(rawData),
       path: "rssSource.json",

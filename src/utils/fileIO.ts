@@ -4,9 +4,8 @@ import type { FsTextFileOption, FsOptions } from "@tauri-apps/api/fs";
 // https://tauri.studio/docs/api/js/modules/path
 import { appDir, join } from "@tauri-apps/api/path";
 // https://tauri.studio/docs/api/js/modules/notification
-//import { sendNotification } from "@tauri-apps/api/notification";
-import type { dataJsonType } from "./initDataJson";
-import { rssType } from "@/types";
+import { sendNotification } from "@tauri-apps/api/notification";
+import { rssType, dataJsonType } from "@/types";
 
 export async function writeFileSync(
   file: FsTextFileOption,
@@ -40,6 +39,10 @@ export async function readFileSync(fileName: string): Promise<dataJsonType> {
     })
     .catch((err) => {
       console.log("Can't readFile");
+      sendNotification({
+        title: "Rss Reader:",
+        body: err.message,
+      });
     });
 }
 
