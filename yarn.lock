@@ -31,6 +31,11 @@
   resolved "https://registry.npmmirror.com/@antfu/utils/-/utils-0.5.0.tgz#b3169429997cb87850e543cb74660f9e2fed7efd"
   integrity sha512-MrAQ/MrPSxbh1bBrmwJjORfJymw4IqSHFBXqvxaga3ZdDM+/zokYF8DjyJpSjY2QmpmgQrajDUBJOWrYeARfzA==
 
+"@antfu/utils@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.npmjs.org/@antfu/utils/-/utils-0.5.1.tgz#7eb6764878adb715daff20019e5a15fd63d93342"
+  integrity sha512-8Afo0+xvYe1K8Wm4xHTymfTkpzy36aaqDvhXIayUwl+mecMG9Xzl3XjXa6swG6Bk8FBeQ646RyvmsYt6+2Be9g==
+
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -1133,6 +1138,14 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@rollup/pluginutils@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.npmjs.org/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
+  integrity sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==
+  dependencies:
+    estree-walker "^2.0.1"
+    picomatch "^2.2.2"
+
 "@sideway/address@^4.1.3":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.4.tgz#03dccebc6ea47fdc226f7d3d1ad512955d4783f0"
@@ -1428,10 +1441,23 @@
     "@unocss/core" "0.30.6"
     unconfig "^0.3.2"
 
+"@unocss/config@0.32.12":
+  version "0.32.12"
+  resolved "https://registry.npmjs.org/@unocss/config/-/config-0.32.12.tgz#edaa2f52f667258f173efad5295fe00542d1d90f"
+  integrity sha512-eK3gR+mKQkmpcqWGyCZMKpweDgJdqm9jFZnBW7ptJh+jk7eIjzVKGEJwqk7wu5oY4VoIr5rgMGGj9ydkldDj8w==
+  dependencies:
+    "@unocss/core" "0.32.12"
+    unconfig "^0.3.3"
+
 "@unocss/core@0.30.6":
   version "0.30.6"
   resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.30.6.tgz#c5f16372ca544343d8af04e7430b196b1ae3f909"
   integrity sha512-hN/W1xmAsKdXOOpQ37YdAwHTz5+w4yhi6HA7FbkxrxBWy/EhcnxIgrZ/EbdtsSBQZ+Jf8vD1CGVkjQmU4ax0jQ==
+
+"@unocss/core@0.32.12":
+  version "0.32.12"
+  resolved "https://registry.npmjs.org/@unocss/core/-/core-0.32.12.tgz#c10c87f96172e86e9cb3933e0ad9858d028d8313"
+  integrity sha512-YT2xC/m9u5Il77keqQeNBSU/mU573CMamCalp+AaGAiEil0MDlScuaGMQikxLTkAP24m4eeok8hu4G9ebBskSg==
 
 "@unocss/inspector@0.30.6":
   version "0.30.6"
@@ -1533,15 +1559,15 @@
     "@unocss/transformer-directives" "0.30.6"
     magic-string "^0.26.1"
 
-"@unocss/webpack@^0.30.6":
-  version "0.30.6"
-  resolved "https://registry.yarnpkg.com/@unocss/webpack/-/webpack-0.30.6.tgz#9236e505d64cb81bcdf78bf65e100080b3231c4a"
-  integrity sha512-CQLaw+F6kiSCS7Fh0cuXNOj/S4Nk2QvwWnlpSI5SnG4QsVUEZh1IdCZdcUVN2wPG3rfp1zMhwgwLOj+EWEBUcw==
+"@unocss/webpack@^0.32.12":
+  version "0.32.12"
+  resolved "https://registry.npmjs.org/@unocss/webpack/-/webpack-0.32.12.tgz#89314ea9bd2a43d9f130a30981730f3195fc3d24"
+  integrity sha512-UQOwwSevfa/WqhHveDmi8ypctVqify3T3yrtMCsEEGB4I0qZYERzAz5X185/jIbwsI17ZM9hyHYou0csTE/vLA==
   dependencies:
-    "@rollup/pluginutils" "^4.2.0"
-    "@unocss/config" "0.30.6"
-    "@unocss/core" "0.30.6"
-    unplugin "^0.6.0"
+    "@rollup/pluginutils" "^4.2.1"
+    "@unocss/config" "0.32.12"
+    "@unocss/core" "0.32.12"
+    unplugin "^0.6.2"
     webpack-sources "^3.2.3"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
@@ -3180,6 +3206,11 @@ defu@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/defu/-/defu-5.0.1.tgz#a034278f9b032bf0845d261aa75e9ad98da878ac"
   integrity sha512-EPS1carKg+dkEVy3qNTqIdp2qV7mUP08nIsupfwQpz++slCVRw7qbQyWvSTig+kFPwz2XXp5/kIIkH+CwrJKkQ==
+
+defu@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npmjs.org/defu/-/defu-6.0.0.tgz#b397a6709a2f3202747a3d9daf9446e41ad0c5fc"
+  integrity sha512-t2MZGLf1V2rV4VBZbWIaXKdX/mUcYW0n2znQZoADBkGGxYL8EWqCuCZBmJPJ/Yy9fofJkyuuSuo5GSwo0XdEgw==
 
 del@^6.0.0:
   version "6.0.0"
@@ -6751,6 +6782,15 @@ unconfig@^0.3.2:
     defu "^5.0.1"
     jiti "^1.13.0"
 
+unconfig@^0.3.3:
+  version "0.3.4"
+  resolved "https://registry.npmjs.org/unconfig/-/unconfig-0.3.4.tgz#f0c85584a088a434dde2215d8a3b272427d6056c"
+  integrity sha512-cf39F1brwQuLSuMLTYXOdWJH0O1CJee6a4QW1nYtO7SoBUfVvQCvEel6ssTNXtPfi17kop1ADmVtmC49NlFkIQ==
+  dependencies:
+    "@antfu/utils" "^0.5.1"
+    defu "^6.0.0"
+    jiti "^1.13.0"
+
 ungeui@^0.1.6:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/ungeui/-/ungeui-0.1.7.tgz#4ba6392a22b98dca82219df8d606598fca5a3400"
@@ -6832,10 +6872,10 @@ unplugin@^0.5.2:
     webpack-sources "^3.2.3"
     webpack-virtual-modules "^0.4.3"
 
-unplugin@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/unplugin/-/unplugin-0.6.0.tgz#bc5c8becdafca8a47e40cb51b2be59c3b1ad9533"
-  integrity sha512-CzXJyV3cTzxcuD6kRN4SXtNA5iDJOBZpz/RjfxNRyvytXSVmtpQKVu+snacS+kYanu6gxLgASXGDhd8+4XezLw==
+unplugin@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.npmjs.org/unplugin/-/unplugin-0.6.2.tgz#5646829e7f8a664c8a4498654f258dc6ad3ebf1f"
+  integrity sha512-+QONc2uBFQbeo4x5mlJHjTKjR6pmuchMpGVrWhwdGFFMb4ttFZ4E9KqhOOrNcm3Q8NNyB1vJ4s5e36IZC7UWYw==
   dependencies:
     chokidar "^3.5.3"
     webpack-sources "^3.2.3"
