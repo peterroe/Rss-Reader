@@ -74,6 +74,6 @@
     "security": {
       "csp": null
     },
-    "macOSPrivateApi": false
+    "macOSPrivateApi": true
   }
 }
