@@ -33,6 +33,14 @@ Among the products of desktop programs, there are few products with beautiful in
 
 [Click here to download it.](https://github.com/peterroe/Rss-Reader/releases)
 
+## Features
+
+- `MacOS` and `Windows` supported.
+- Open Source.
+- Beautiful GUI.
+- Lightweight.
+- Fast.
+
 ## Preview
 
 ![img](./img/demo.gif)
