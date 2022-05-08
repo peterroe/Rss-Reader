@@ -1,13 +1,13 @@
 [package]
 name = "app"
-version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+version = "0.5.1"
+description = "Rss-Reader"
+authors = ["peterroe"]
 license = ""
 repository = ""
 default-run = "app"
-edition = "2021"
-rust-version = "1.57"
+edition = "2022"
+rust-version = "1.60"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
