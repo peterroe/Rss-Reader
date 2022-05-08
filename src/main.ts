@@ -18,6 +18,7 @@ import "windi.css";
 
 // unocss
 // https://github.com/unocss/unocss
+// import "uno.css";
 import "uno.css";
 
 createApp(App)
