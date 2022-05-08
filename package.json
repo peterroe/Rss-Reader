@@ -1,12 +1,13 @@
 {
   "name": "Rss-Reader",
-  "version": "0.5.1",
+  "version": "0.6.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "release:": "cp -r ./src-tauri/target/release/bundle/msi/* ./release/",
+    "release:windows": "cp -r ./src-tauri/target/release/bundle/msi/* ./release/",
+    "release:macos": "cp -r ./src-tauri/target/release/bundle/msi/* ./release/",
     "tauri:build": "rimraf ./src-tauri/target/release/bundle/* && vue-cli-service tauri:build",
     "tauri:dev": "vue-cli-service tauri:dev",
     "tauri:serve": "vue-cli-service tauri:serve"
