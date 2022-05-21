@@ -6851,10 +6851,10 @@ undici@^5.0.0:
   resolved "https://registry.npmjs.org/undici/-/undici-5.1.1.tgz#356427b0d1f032ca4cf85537b1e1694a52090438"
   integrity sha512-CmK9JzLSMGx+2msOao8LhkKn3J7eKo2M50v0KZQ2XbiHcGqLS1HiIj01ceIm3jbUYlspw/FTSb6nMdSNyvVyaQ==
 
-ungeui@^0.1.6:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/ungeui/-/ungeui-0.1.7.tgz#4ba6392a22b98dca82219df8d606598fca5a3400"
-  integrity sha512-QAjC0peAki67PVhmU2+bw0znQezWjUu6D7z1Cdg3drwLih2xyCztLJ8VtjQ07bns50TVNrmneDrLzukDDc6ABA==
+ungeui@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.npmjs.org/ungeui/-/ungeui-0.1.8.tgz#a662c72f4ad54db2dd90965d4c2eaeb77e0b08be"
+  integrity sha512-YpMbkd2Xo5OAXh8HSH8q2nyYqBa9/EBT5qyZUMShGr9+xcxvElSg/M37W5XM73Dv6QwyQHwAdD+v8AGdj6Q7vQ==
   dependencies:
     "@vueuse/core" "^6.9.1"
 
