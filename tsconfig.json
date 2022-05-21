@@ -21,7 +21,6 @@
     "skipLibCheck": true,
     "jsx": "preserve",
     "lib": ["esnext", "dom"],
-    "types": ["node"],
     "rootDir": ".",
     "paths": {
       "@/*": ["src/*"]
